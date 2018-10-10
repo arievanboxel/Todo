@@ -31,7 +31,14 @@
                             <outlet property="delegate" destination="MVL-d6-zp2" id="Aco-rQ-TWF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Todo" id="HQr-2A-Mrt"/>
+                    <navigationItem key="navigationItem" title="Todo" id="HQr-2A-Mrt">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PBX-CK-pLm">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="MVL-d6-zp2" id="4gw-Z6-JiI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flE-4p-NKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
