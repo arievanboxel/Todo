@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		004E1112216F8A4E00B2E3F8 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 004E1110216F8A4D00B2E3F8 /* Realm.framework */; };
+		004E1113216F8A4E00B2E3F8 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 004E1110216F8A4D00B2E3F8 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		004E1114216F8A4E00B2E3F8 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 004E1111216F8A4E00B2E3F8 /* RealmSwift.framework */; };
+		004E1115216F8A4E00B2E3F8 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 004E1111216F8A4E00B2E3F8 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0088AE93216F4F69003AE884 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0088AE92216F4F69003AE884 /* CategoryViewController.swift */; };
 		00EC580A216DE16700087493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EC5809216DE16700087493 /* AppDelegate.swift */; };
 		00EC580C216DE16700087493 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EC580B216DE16700087493 /* TodoListViewController.swift */; };
@@ -16,7 +20,24 @@
 		00EC5823216E5F6400087493 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00EC5821216E5F6400087493 /* DataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		004E1116216F8A4E00B2E3F8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				004E1115216F8A4E00B2E3F8 /* RealmSwift.framework in Embed Frameworks */,
+				004E1113216F8A4E00B2E3F8 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		004E1110216F8A4D00B2E3F8 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		004E1111216F8A4E00B2E3F8 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		0088AE92216F4F69003AE884 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		00EC5806216DE16700087493 /* Todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00EC5809216DE16700087493 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				004E1114216F8A4E00B2E3F8 /* RealmSwift.framework in Frameworks */,
+				004E1112216F8A4E00B2E3F8 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				00EC5808216DE16700087493 /* Todo */,
+				004E1110216F8A4D00B2E3F8 /* Realm.framework */,
+				004E1111216F8A4E00B2E3F8 /* RealmSwift.framework */,
 				00EC5807216DE16700087493 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +137,8 @@
 				00EC5802216DE16700087493 /* Sources */,
 				00EC5803216DE16700087493 /* Frameworks */,
 				00EC5804216DE16700087493 /* Resources */,
+				004E1116216F8A4E00B2E3F8 /* Embed Frameworks */,
+				004E1117216F8A5400B2E3F8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -167,6 +194,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		004E1117216F8A5400B2E3F8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		00EC5802216DE16700087493 /* Sources */ = {
@@ -323,6 +370,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Todo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -340,6 +391,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Todo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
