@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00378323216FAA5D0092D08A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00378322216FAA5D0092D08A /* Item.swift */; };
+		00378325216FAA680092D08A /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00378324216FAA680092D08A /* Category.swift */; };
 		004E1112216F8A4E00B2E3F8 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 004E1110216F8A4D00B2E3F8 /* Realm.framework */; };
 		004E1113216F8A4E00B2E3F8 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 004E1110216F8A4D00B2E3F8 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		004E1114216F8A4E00B2E3F8 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 004E1111216F8A4E00B2E3F8 /* RealmSwift.framework */; };
@@ -17,7 +19,6 @@
 		00EC580F216DE16700087493 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00EC580D216DE16700087493 /* Main.storyboard */; };
 		00EC5811216DE16800087493 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00EC5810216DE16800087493 /* Assets.xcassets */; };
 		00EC5814216DE16800087493 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00EC5812216DE16800087493 /* LaunchScreen.storyboard */; };
-		00EC5823216E5F6400087493 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00EC5821216E5F6400087493 /* DataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +37,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00378322216FAA5D0092D08A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		00378324216FAA680092D08A /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		004E1110216F8A4D00B2E3F8 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		004E1111216F8A4E00B2E3F8 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		0088AE92216F4F69003AE884 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +49,6 @@
 		00EC5810216DE16800087493 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00EC5813216DE16800087493 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00EC5815216DE16800087493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00EC5822216E5F6400087493 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +98,8 @@
 		00EC581D216E396200087493 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				00EC5821216E5F6400087493 /* DataModel.xcdatamodeld */,
+				00378322216FAA5D0092D08A /* Item.swift */,
+				00378324216FAA680092D08A /* Category.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -220,10 +223,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00378323216FAA5D0092D08A /* Item.swift in Sources */,
 				0088AE93216F4F69003AE884 /* CategoryViewController.swift in Sources */,
 				00EC580C216DE16700087493 /* TodoListViewController.swift in Sources */,
-				00EC5823216E5F6400087493 /* DataModel.xcdatamodeld in Sources */,
 				00EC580A216DE16700087493 /* AppDelegate.swift in Sources */,
+				00378325216FAA680092D08A /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,19 +433,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		00EC5821216E5F6400087493 /* DataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				00EC5822216E5F6400087493 /* DataModel.xcdatamodel */,
-			);
-			currentVersion = 00EC5822216E5F6400087493 /* DataModel.xcdatamodel */;
-			path = DataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 00EC57FE216DE16700087493 /* Project object */;
 }
