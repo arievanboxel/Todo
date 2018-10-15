@@ -8,24 +8,50 @@
 
 import UIKit
 import RealmSwift
+import ChameleonFramework
 
 class TodoListViewController: SwipeTableViewController {
 
     let realm = try! Realm()
     var todoItems: Results<Item>?
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var selectedCategory : Category? {
         didSet {
             loadItems()
         }
     }
-
-    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        searchBar.delegate = self        
+        tableView.separatorStyle = .none
+        
+        searchBar.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        title = selectedCategory?.name
+        
+        guard let colorHex = selectedCategory?.backgroundColor else { return }
+        
+        updateNavBar(withHexCode: colorHex)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        updateNavBar(withHexCode: "1D9BF6")
+    }
+    
+    // MARK: - NavBar Setup Methods
+    func updateNavBar(withHexCode colorHexCode: String) {
+        guard let navBar = navigationController?.navigationBar else { return }
+        guard let navBarColor = UIColor(hexString: colorHexCode) else { return }
+        
+        navBar.barTintColor = navBarColor
+        navBar.tintColor = ContrastColorOf(backgroundColor: navBarColor, returnFlat: true)
+        navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: navBar.tintColor]
+        searchBar.barTintColor = navBarColor
     }
 
     // MARK: - TableView Datasource methods
@@ -41,6 +67,14 @@ class TodoListViewController: SwipeTableViewController {
             cell.accessoryType = item.done ? .checkmark : .none
         } else {
             cell.textLabel?.text = "No Items Added Yet"
+        }
+        
+        if let currentCategory = self.selectedCategory, let categoryBackgroundColor = currentCategory.backgroundColor {
+            let baseColor = UIColor(hexString: categoryBackgroundColor)
+            if let backgroundColor = baseColor?.darken(byPercentage: CGFloat(indexPath.row) / CGFloat(todoItems!.count)) {
+                cell.backgroundColor = backgroundColor
+                cell.textLabel?.textColor = ContrastColorOf(backgroundColor: backgroundColor, returnFlat: true)
+            }
         }
         
         return cell
